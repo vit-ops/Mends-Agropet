@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Veterinária Mends Agropet</title>
+  <link rel="icon" href="icon.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #f8fdf9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ==============================
+       CABEÇALHO
+    ============================== */
+    header {
+      background: linear-gradient(135deg, #3da35d, #67c26f);
+      color: white;
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: white;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ==============================
+       SEÇÃO HERO
+    ============================== */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      padding: 90px 10%;
+      background: linear-gradient(120deg, #e8f5e9, #ffffff);
+    }
+
+    .hero-text {
+      flex: 1;
+      max-width: 550px;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .hero-text h2 {
+      font-size: 2.8rem;
+      color: #2e7d32;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .hero-text p {
+      font-size: 1.15rem;
+      color: #444;
+      margin-bottom: 25px;
+    }
+
+    .hero-text button {
+      background: linear-gradient(135deg, #43a047, #66bb6a);
+      color: white;
+      border: none;
+      padding: 15px 35px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(67, 160, 71, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .hero-text button:hover {
+      background: linear-gradient(135deg, #388e3c, #4caf50);
+      transform: translateY(-3px);
+    }
+
+    .VeterinariaImg img {
+      width: 420px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      animation: fadeIn 1.2s ease;
+    }
+
+    /* ==============================
+       SERVIÇOS
+    ============================== */
+    section {
+      padding: 80px 10%;
+    }
+
+    section h3 {
+      font-size: 2.3rem;
+      color: #2e7d32;
+      text-align: center;
+      margin-bottom: 50px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    section h3::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #66bb6a;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .servicos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 35px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .card h4 {
+      font-size: 1.3rem;
+      color: #388e3c;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* ==============================
+       CONTATO
+    ============================== */
+    #contato {
+      background: linear-gradient(135deg, #f1f8e9, #ffffff);
+      border-top: 1px solid #dcecdc;
+    }
+
+    #contato p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 12px;
+    }
+
+    /* ==============================
+       RODAPÉ
+    ============================== */
+    footer {
+      background: linear-gradient(135deg, #43a047, #66bb6a);
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.95rem;
+      box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ==============================
+       ANIMAÇÕES
+    ============================== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==============================
+       RESPONSIVIDADE
+    ============================== */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      nav ul {
+        gap: 20px;
+      }
+
+      .VeterinariaImg img {
+        width: 85%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Vida Animal</h1>
+    <nav>
+      <ul>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Cuidando com amor de quem você mais ama</h2>
+      <p>Na <strong>Clínica Mends Agropet</strong>, acreditamos que cada pet é único e merece cuidado, atenção e amor em cada detalhe.
+      Oferecemos um atendimento completo e humanizado, com uma equipe apaixonada por animais e preparada para garantir
+      bem-estar, saúde e qualidade de vida para o seu melhor amigo. Aqui, seu companheiro encontra desde consultas e vacinas,
+      até tratamentos especializados e cuidados preventivos — tudo em um ambiente acolhedor, moderno e pensado para
+      proporcionar segurança e conforto a cada visita.</p>
+      
+      <button onclick="window.open('https://wa.me/16993625526?text=Olá!%20Gostaria%20de%20conhecer%20seus%20serviços.', '_blank')">
+        💬 Agende uma consulta
+      </button>
+    </div>
+    <div class="VeterinariaImg">
+      <img src="Img_Vet.png" alt="Veterinária cuidando de cachorro">
+    </div>
+  </section>
+
+  <section id="servicos">
+    <h3>Nossos Serviços</h3>
+    <div class="servicos">
+      <div class="card">
+        <h4>Vacinação</h4>
+        <p>Proteja seu pet com vacinas seguras e aplicadas por profissionais experientes.</p>
+      </div>
+      <div class="card">
+        <h4>Consultas</h4>
+        <p>Atendimento clínico completo e diagnóstico preciso para cuidar da saúde do seu melhor amigo.</p>
+      </div>
+      <div class="card">
+        <h4>Banho e Tosa</h4>
+        <p>Cuidados estéticos e higiênicos que deixam seu pet mais bonito e saudável.</p>
+      </div>
+      <div class="card">
+        <h4>Vendas de produtos (rações e acessórios)</h4>
+        <p>Cuidados estéticos e higiênicos que deixam seu pet mais bonito e saudável.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h3>Fale Conosco</h3>
+    <p>📞(16) 99362-5526 | ✉️ flaviamendesvet@gmail.com</p>
+    
+  </section>
+
+  <footer>
+    <p>© 2025 Clínica Mends Agropet - Todos os direitos reservados</p>
+  </footer>
+
+</body>
+</html>
